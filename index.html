@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Annuaire Pro Bohicon - Trouvez facilement les professionnels et entreprises de Bohicon.">
+    <meta name="theme-color" content="#0f172a">
+
+    <title>Annuaire Pro Bohicon</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">📍</span>
+                <span>
+                    Annuaire
+                    <strong>Pro Bohicon</strong>
+                </span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#accueil">Accueil</a>
+                <a href="#categories">Catégories</a>
+                <a href="#professionnels">Professionnels</a>
+                <a href="#ajouter">Ajouter mon activité</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero" id="accueil">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <span class="badge">
+                        📍 Bohicon & environs
+                    </span>
+
+                    <h1>
+                        Trouvez le professionnel
+                        <span>qu'il vous faut.</span>
+                    </h1>
+
+                    <p>
+                        Découvrez les entreprises, commerces et prestataires
+                        de services de Bohicon en quelques secondes.
+                    </p>
+
+                    <div class="search-box">
+
+                        <span>🔎</span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Que recherchez-vous ?"
+                        >
+
+                        <button id="searchBtn">
+                            Rechercher
+                        </button>
+
+                    </div>
+
+                    <div class="popular">
+
+                        <span>Recherches populaires :</span>
+
+                        <button class="quick-search" data-search="Restaurant">
+                            Restaurants
+                        </button>
+
+                        <button class="quick-search" data-search="Coiffure">
+                            Coiffeurs
+                        </button>
+
+                        <button class="quick-search" data-search="Informatique">
+                            Informatique
+                        </button>
+
+                        <button class="quick-search" data-search="Couture">
+                            Couture
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-card">
+
+                    <div class="hero-card-top">
+                        <span>⭐</span>
+                        <span>Professionnels vérifiés</span>
+                    </div>
+
+                    <div class="hero-number" id="heroNumber">
+                        0
+                    </div>
+
+                    <p>
+                        professionnels référencés
+                    </p>
+
+                    <div class="hero-mini-stats">
+
+                        <div>
+                            <strong id="categoryNumber">0</strong>
+                            <span>Catégories</span>
+                        </div>
+
+                        <div>
+                            <strong>24/7</strong>
+                            <span>Accessible</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORIES ================= -->
+
+        <section class="section" id="categories">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <div>
+                        <span class="section-label">
+                            EXPLOREZ
+                        </span>
+
+                        <h2>
+                            Trouvez par catégorie
+                        </h2>
+                    </div>
+
+                    <button class="see-all" id="showAllBtn">
+                        Voir tout →
+                    </button>
+
+                </div>
+
+                <div class="categories" id="categoriesContainer"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROFESSIONALS ================= -->
+
+        <section class="section professionals-section" id="professionnels">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <div>
+                        <span class="section-label">
+                            NOS PROFESSIONNELS
+                        </span>
+
+                        <h2>
+                            Activités populaires
+                        </h2>
+                    </div>
+
+                    <span class="results-count" id="resultsCount"></span>
+
+                </div>
+
+                <div class="professionals" id="professionalsContainer"></div>
+
+                <div class="empty-state" id="emptyState">
+
+                    <div class="empty-icon">
+                        🔍
+                    </div>
+
+                    <h3>
+                        Aucun résultat trouvé
+                    </h3>
+
+                    <p>
+                        Essayez un autre mot-clé ou une autre catégorie.
+                    </p>
+
+                    <button id="resetBtn">
+                        Réinitialiser
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta-section" id="ajouter">
+
+            <div class="container">
+
+                <div class="cta">
+
+                    <div>
+
+                        <span class="cta-icon">
+                            🚀
+                        </span>
+
+                        <h2>
+                            Vous avez une activité à Bohicon ?
+                        </h2>
+
+                        <p>
+                            Ajoutez gratuitement votre entreprise ou votre service
+                            à notre annuaire.
+                        </p>
+
+                    </div>
+
+                    <button id="openFormBtn" class="cta-button">
+                        Ajouter mon activité
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= MODAL FORMULAIRE ================= -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" id="closeModal">
+                ×
+            </button>
+
+            <div class="modal-header">
+
+                <span class="modal-icon">
+                    📝
+                </span>
+
+                <h2>
+                    Ajouter votre activité
+                </h2>
+
+                <p>
+                    Remplissez les informations ci-dessous.
+                </p>
+
+            </div>
+
+            <form id="businessForm">
+
+                <div class="form-group">
+
+                    <label>
+                        Nom de l'activité
+                    </label>
+
+                    <input
+                        type="text"
+                        id="businessName"
+                        placeholder="Ex : Chez Maman"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Catégorie
+                        </label>
+
+                        <select id="businessCategory" required>
+                            <option value="">Choisir</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Quartier
+                        </label>
+
+                        <input
+                            type="text"
+                            id="businessLocation"
+                            placeholder="Ex : Agongointo"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Téléphone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="businessPhone"
+                        placeholder="+229 97 00 00 00"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="businessDescription"
+                        placeholder="Présentez brièvement votre activité..."
+                        required
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Envoyer ma demande
+                </button>
+
+            </form>
+
+            <div class="form-success" id="formSuccess">
+
+                <div>
+                    ✅
+                </div>
+
+                <h3>
+                    Demande enregistrée !
+                </h3>
+
+                <p>
+                    Merci. Votre demande sera examinée avant publication.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-icon">📍</span>
+
+                    <span>
+                        Annuaire
+                        <strong>Pro Bohicon</strong>
+                    </span>
+                </a>
+
+                <p>
+                    Le répertoire numérique des professionnels
+                    et entreprises de Bohicon.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="#accueil">
+                    Accueil
+                </a>
+
+                <a href="#categories">
+                    Catégories
+                </a>
+
+                <a href="#professionnels">
+                    Professionnels
+                </a>
+
+                <a href="#ajouter">
+                    Ajouter mon activité
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © <span id="year"></span>
+            Annuaire Pro Bohicon — Tous droits réservés.
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
